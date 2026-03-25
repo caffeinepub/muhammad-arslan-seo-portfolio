@@ -63,7 +63,7 @@ export default function About() {
                 </div>
               ) : (
                 <img
-                  src="https://i.ibb.co/sd1MmzDS"
+                  src="/assets/uploads/1761192194022-019d23cd-8887-7268-b0c1-b1002fc84dfd-1.jpg"
                   alt="Muhammad Arslan"
                   className="w-full h-full object-cover object-top"
                   onError={() => setImgError(true)}
