@@ -1,0 +1,180 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Poppins:wght@400;500;600;700;800;900&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --radius: 0.75rem;
+    /* Dark navy background */
+    --background: 0.08 0.02 250;
+    --foreground: 0.97 0.01 255;
+    --card: 0.13 0.025 250;
+    --card-foreground: 0.97 0.01 255;
+    --popover: 0.13 0.025 250;
+    --popover-foreground: 0.97 0.01 255;
+    /* Neon cyan primary */
+    --primary: 0.82 0.15 190;
+    --primary-foreground: 0.08 0.02 250;
+    --secondary: 0.16 0.03 250;
+    --secondary-foreground: 0.97 0.01 255;
+    --muted: 0.16 0.03 250;
+    --muted-foreground: 0.73 0.02 250;
+    --accent: 0.82 0.15 190;
+    --accent-foreground: 0.08 0.02 250;
+    --destructive: 0.577 0.245 27.325;
+    --destructive-foreground: 0.985 0 0;
+    --border: 0.22 0.04 250;
+    --input: 0.18 0.03 250;
+    --ring: 0.82 0.15 190;
+    --chart-1: 0.82 0.15 190;
+    --chart-2: 0.83 0.18 155;
+    --chart-3: 0.73 0.17 225;
+    --chart-4: 0.82 0.15 190;
+    --chart-5: 0.83 0.18 155;
+    --sidebar: 0.1 0.02 250;
+    --sidebar-foreground: 0.97 0.01 255;
+    --sidebar-primary: 0.82 0.15 190;
+    --sidebar-primary-foreground: 0.08 0.02 250;
+    --sidebar-accent: 0.16 0.03 250;
+    --sidebar-accent-foreground: 0.97 0.01 255;
+    --sidebar-border: 0.22 0.04 250;
+    --sidebar-ring: 0.82 0.15 190;
+    /* Custom semantic tokens */
+    --neon-cyan: 0.82 0.15 190;
+    --neon-green: 0.83 0.18 155;
+    --neon-blue: 0.73 0.17 225;
+    --body-text: 0.73 0.02 250;
+    --heading: 0.97 0.01 255;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: "Inter", sans-serif;
+    background: oklch(0.08 0.02 250);
+  }
+}
+
+@layer utilities {
+  .font-heading {
+    font-family: "Poppins", sans-serif;
+  }
+
+  .text-neon-cyan {
+    color: oklch(var(--neon-cyan));
+  }
+
+  .text-neon-green {
+    color: oklch(var(--neon-green));
+  }
+
+  .text-body {
+    color: oklch(var(--body-text));
+  }
+
+  .text-heading {
+    color: oklch(var(--heading));
+  }
+
+  .bg-card-dark {
+    background: oklch(0.13 0.025 250);
+  }
+
+  .border-neon {
+    border-color: oklch(0.82 0.15 190 / 0.4);
+  }
+
+  .glow-cyan {
+    box-shadow: 0 0 20px oklch(0.82 0.15 190 / 0.25), 0 0 40px
+      oklch(0.82 0.15 190 / 0.1);
+  }
+
+  .glow-cyan-sm {
+    box-shadow: 0 0 10px oklch(0.82 0.15 190 / 0.3);
+  }
+
+  .btn-neon {
+    background: linear-gradient(
+      135deg,
+      oklch(0.82 0.15 190),
+      oklch(0.73 0.17 225)
+    );
+    color: oklch(0.08 0.02 250);
+    font-weight: 700;
+    border-radius: 9999px;
+    transition: all 0.3s ease;
+    box-shadow: 0 0 20px oklch(0.82 0.15 190 / 0.4);
+  }
+
+  .btn-neon:hover {
+    box-shadow: 0 0 30px oklch(0.82 0.15 190 / 0.6), 0 0 60px
+      oklch(0.82 0.15 190 / 0.3);
+    transform: translateY(-2px);
+  }
+
+  .btn-neon-outline {
+    background: transparent;
+    border: 2px solid oklch(0.82 0.15 190);
+    color: oklch(0.82 0.15 190);
+    font-weight: 600;
+    border-radius: 9999px;
+    transition: all 0.3s ease;
+  }
+
+  .btn-neon-outline:hover {
+    background: oklch(0.82 0.15 190 / 0.1);
+    box-shadow: 0 0 20px oklch(0.82 0.15 190 / 0.3);
+    transform: translateY(-2px);
+  }
+
+  .card-hover {
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s
+      ease;
+  }
+
+  .card-hover:hover {
+    transform: translateY(-6px);
+    border-color: oklch(0.82 0.15 190 / 0.7);
+    box-shadow: 0 12px 40px oklch(0.82 0.15 190 / 0.2);
+  }
+
+  .fade-in {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+  }
+
+  .fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .section-glow {
+    position: relative;
+  }
+
+  .section-glow::before {
+    content: "";
+    position: absolute;
+    top: -80px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 600px;
+    height: 200px;
+    background: radial-gradient(
+      ellipse,
+      oklch(0.82 0.15 190 / 0.07) 0%,
+      transparent 70%
+    );
+    pointer-events: none;
+  }
+}
