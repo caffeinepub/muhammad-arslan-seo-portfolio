@@ -2,11 +2,9 @@ import { Mail, MessageCircle } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
 import { SiInstagram, SiLinkedin } from "react-icons/si";
 import { toast } from "sonner";
-import { useSubmitMessage } from "../hooks/useQueries";
 
 export default function Contact() {
   const ref = useRef<HTMLDivElement>(null);
-  const { mutate, isPending, isSuccess } = useSubmitMessage();
   const [form, setForm] = useState({ name: "", email: "", message: "" });
 
   useEffect(() => {
@@ -24,13 +22,13 @@ export default function Contact() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    mutate(form, {
-      onSuccess: () => {
-        toast.success("Message sent! I'll get back to you soon.");
-        setForm({ name: "", email: "", message: "" });
-      },
-      onError: () => toast.error("Something went wrong. Please try again."),
-    });
+    const subject = encodeURIComponent(`Message from ${form.name}`);
+    const body = encodeURIComponent(
+      `Name: ${form.name}\nEmail: ${form.email}\n\nMessage:\n${form.message}`,
+    );
+    window.location.href = `mailto:arslanwebify@gmail.com?subject=${subject}&body=${body}`;
+    toast.success("Opening your email client to send the message!");
+    setForm({ name: "", email: "", message: "" });
   };
 
   return (
@@ -149,15 +147,10 @@ export default function Contact() {
             </div>
             <button
               type="submit"
-              disabled={isPending || isSuccess}
               data-ocid="contact.submit_button"
-              className="btn-neon w-full py-3 text-base disabled:opacity-60 disabled:cursor-not-allowed"
+              className="btn-neon w-full py-3 text-base"
             >
-              {isPending
-                ? "Sending..."
-                : isSuccess
-                  ? "✓ Message Sent!"
-                  : "Send Message"}
+              Send Message
             </button>
           </form>
 

@@ -75,9 +75,7 @@ export default function Navbar() {
 
         <div className="hidden md:block">
           <a
-            href="https://wa.me/923401477947"
-            target="_blank"
-            rel="noopener noreferrer"
+            href="mailto:arslanwebify@gmail.com?subject=Free%20SEO%20Audit%20Request&body=Hi%20Arslan%2C%0A%0AI%27d%20like%20to%20book%20a%20free%20SEO%20audit%20for%20my%20business.%0A%0AWebsite%3A%20%0ABusiness%20Name%3A%20%0ALocation%3A%20"
             data-ocid="nav.primary_button"
             className="btn-neon px-5 py-2 text-sm inline-block"
           >
@@ -111,9 +109,7 @@ export default function Navbar() {
               </a>
             ))}
             <a
-              href="https://wa.me/923401477947"
-              target="_blank"
-              rel="noopener noreferrer"
+              href="mailto:arslanwebify@gmail.com?subject=Free%20SEO%20Audit%20Request&body=Hi%20Arslan%2C%0A%0AI%27d%20like%20to%20book%20a%20free%20SEO%20audit%20for%20my%20business.%0A%0AWebsite%3A%20%0ABusiness%20Name%3A%20%0ALocation%3A%20"
               data-ocid="nav.primary_button"
               className="btn-neon px-5 py-2 text-sm text-center mt-2 inline-block"
             >

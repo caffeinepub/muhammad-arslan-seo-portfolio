@@ -59,34 +59,31 @@ export default function Hero() {
               className="font-heading font-extrabold text-heading leading-tight"
               style={{ fontSize: "clamp(2rem, 5vw, 3.5rem)" }}
             >
-              I Help Local Businesses{" "}
-              <span className="text-neon-cyan">Rank #1 on Google</span> &amp;
-              Get More Customers
+              Your Local Business,{" "}
+              <span className="text-neon-cyan">at the Top of Google</span>
             </h1>
 
             <p
               className="text-lg font-semibold"
               style={{ color: "oklch(0.83 0.18 155)" }}
             >
-              Drive Traffic, Calls, and Sales with Expert Local SEO Services
+              More Traffic. More Calls. More Revenue.
             </p>
 
             <p className="text-base leading-relaxed text-body">
-              I'm a results-driven Local SEO Specialist helping businesses
-              dominate local search rankings. With data-backed strategies and
-              proven techniques, I turn clicks into customers and visibility
-              into revenue.
+              I help local businesses dominate search rankings with proven SEO
+              strategies backed by data. If your competitors are showing up
+              before you, that changes today. I turn your online visibility into
+              real customers and measurable growth.
             </p>
 
             <div className="flex flex-wrap gap-4">
               <a
-                href="https://wa.me/923401477947"
-                target="_blank"
-                rel="noopener noreferrer"
+                href="mailto:arslanwebify@gmail.com?subject=Free%20SEO%20Audit%20Request&body=Hi%20Arslan%2C%0A%0AI%27d%20like%20to%20book%20a%20free%20SEO%20audit%20for%20my%20business.%0A%0AWebsite%3A%20%0ABusiness%20Name%3A%20%0ALocation%3A%20"
                 data-ocid="hero.primary_button"
                 className="btn-neon px-7 py-3 text-base inline-block"
               >
-                📋 Book Free SEO Audit
+                📋 Get Your Free SEO Audit
               </a>
               <a
                 href="#services"
